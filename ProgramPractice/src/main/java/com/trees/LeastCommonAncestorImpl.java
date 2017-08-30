@@ -1,9 +1,18 @@
 package com.trees;
 
+/**
+ * @author slekh
+ */
 import java.util.ArrayList;
 
 public class LeastCommonAncestorImpl {
 	 public Node root;
+	 
+	 /**
+	  * 
+	  * @author slekh
+	  *
+	  */
 	public static class Node{
 		int data;
 		public Node left;
@@ -30,10 +39,25 @@ public class LeastCommonAncestorImpl {
 		/*int ancestor=least.findLeastAncestor(11,2);
 		System.out.println("The least common ancestor of "+i+"and"+j+" is : "+ancestor);*/
 	}
+	
+	/**
+	 * 
+	 * @param i
+	 * @param j
+	 * @return
+	 */
 	public int findLeastAncestor(int i, int j) {
 		return findLeastAncestor(root,i,j);
 		
 	}
+	
+	/**
+	 * 
+	 * @param root2
+	 * @param i
+	 * @param j
+	 * @return
+	 */
 	private int findLeastAncestor(Node root2, int i, int j) {
 		
 		int currentLeast=0; 
@@ -56,6 +80,13 @@ public class LeastCommonAncestorImpl {
 		
 	return currentLeast;
 	}
+	
+	/**
+	 * 
+	 * @param root2
+	 * @param i
+	 * @return
+	 */
 	private ArrayList<Node> getPath(Node root2, int i) {
 		Node node=root2;
 		ArrayList<Node> path=new ArrayList<Node>();
