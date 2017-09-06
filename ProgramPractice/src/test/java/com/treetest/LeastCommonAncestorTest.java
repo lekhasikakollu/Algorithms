@@ -1,7 +1,14 @@
 package com.treetest;
 
+/**
+ * 
+ * @author slekh
+ */
+
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -28,9 +35,14 @@ public class LeastCommonAncestorTest {
 		
 	}
 	
+	@BeforeTest
+	public void checkNull(){
+		Assert.assertTrue(null!=least);
+	}
+	
   @Test(priority=1)
   public void testCase1() {
-	  Assert.assertTrue(null!=least);
+	  
 	  int ancestor=least.findLeastAncestor(11,2);
 	  Assert.assertEquals(8, ancestor);
 	  

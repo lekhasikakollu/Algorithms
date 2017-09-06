@@ -1,9 +1,19 @@
 package com.trees;
 
+/**
+ * @author slekh
+ */
 import java.util.ArrayList;
+
 
 public class LeastCommonAncestorImpl {
 	 public Node root;
+	 
+	 /**
+	  * 
+	  * @author slekh
+	  *
+	  */
 	public static class Node{
 		int data;
 		public Node left;
@@ -14,7 +24,7 @@ public class LeastCommonAncestorImpl {
 			right=null;
 		}
 	}
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		LeastCommonAncestorImpl least=new LeastCommonAncestorImpl();
 		least.root=new Node(8);
 		least.root.left=new Node(6);
@@ -27,13 +37,30 @@ public class LeastCommonAncestorImpl {
 		least.root.right.left=new Node(9);
 		least.root.right.left=new Node(11);
 		
-		/*int ancestor=least.findLeastAncestor(11,2);
-		System.out.println("The least common ancestor of "+i+"and"+j+" is : "+ancestor);*/
-	}
+		int ancestor=least.findLeastAncestor(11,2);
+		System.out.println("The least common ancestor of "+i+"and"+j+" is : "+ancestor);
+	}*/
+	
+	/**
+	 * 
+	 * @param i
+	 * @param j
+	 * @return
+	 * 
+	 * Method to find the least common ancestor node for the given two nodes.
+	 */
 	public int findLeastAncestor(int i, int j) {
 		return findLeastAncestor(root,i,j);
 		
 	}
+	
+	/**
+	 * 
+	 * @param root2
+	 * @param i
+	 * @param j
+	 * @return
+	 */
 	private int findLeastAncestor(Node root2, int i, int j) {
 		
 		int currentLeast=0; 
@@ -56,6 +83,16 @@ public class LeastCommonAncestorImpl {
 		
 	return currentLeast;
 	}
+	
+	/**
+	 * 
+	 * @param root2
+	 * @param i
+	 * @return
+	 * 
+	 * Given a node , 'getPath' method returns a list of nodes which 
+	 * exist in the path from root to that node.
+	 */
 	private ArrayList<Node> getPath(Node root2, int i) {
 		Node node=root2;
 		ArrayList<Node> path=new ArrayList<Node>();
